@@ -1,11 +1,11 @@
 import './Dashboard.scss';
 
 export const Dashboard = ({
-                                                  metrics = defaultMetrics,
-                                                  chartData = defaultChartData,
-                                                  title = "Эффективность бизнеса",
-                                                  subtitle = "Анализ ключевых показателей до и после внедрения ИИ"
-                                              }) => {
+                              metrics = defaultMetrics,
+                              chartData = defaultChartData,
+                              title = "Эффективность бизнеса с ИИ",
+                              subtitle = "Сравнение ключевых показателей до и после внедрения ИИ-автоматизации"
+                          }) => {
     return (
         <section className="dashboard">
             <div className="dashboard-container">
@@ -20,8 +20,8 @@ export const Dashboard = ({
                             <div className="metric-header">
                                 <div className="metric-icon">{metric.icon}</div>
                                 <span className={`metric-change ${metric.change >= 0 ? 'positive' : 'negative'}`}>
-                  {metric.change >= 0 ? '↑' : '↓'} {Math.abs(metric.change)}%
-                </span>
+                                    {metric.change >= 0 ? '↑' : '↓'} {Math.abs(metric.change)}%
+                                </span>
                             </div>
                             <h3 className="metric-value">{metric.value}</h3>
                             <p className="metric-title">{metric.title}</p>
@@ -31,8 +31,10 @@ export const Dashboard = ({
                 </div>
 
                 <div className="chart-section">
-                    <h3 className="chart-title">Динамика проектов наших клиентов по месяцам</h3>
-                    <p className="chart-subtitle">Сравнение показателей до и после внедрения ИИ-решений</p>
+                    <h3 className="chart-title">Динамика бизнес-процессов наших клиентов</h3>
+                    <p className="chart-subtitle">
+                        Сравнение показателей эффективности до и после внедрения ИИ-решений AIMARKET
+                    </p>
 
                     <div className="chart-wrapper">
                         <div className="chart-container">
@@ -40,8 +42,8 @@ export const Dashboard = ({
                                 <span>0</span>
                                 <span>5</span>
                                 <span>10</span>
-                                {/*<span>15</span>*/}
-                                {/*<span>20</span>*/}
+                                <span>15</span>
+                                <span>20</span>
                             </div>
 
                             <div className="chart-content">
@@ -75,17 +77,19 @@ export const Dashboard = ({
 
                 <div className="info-blocks">
                     <div className="info-block">
-                        <h4>Внедрение ИИ-решений</h4>
-                        <p>Каждый месяц мы внедряем систему искусственного интеллекта для автоматизации процессов и анализа данных, что значительно повышает эффективность работы наших клиентов.</p>
+                        <h4>Внедрение ИИ-автоматизации</h4>
+                        <p>
+                            Ежемесячно мы внедряем ИИ-решения для автоматизации бизнес-процессов и анализа данных, что позволяет значительно повысить эффективность работы компаний и сократить затраты времени.
+                        </p>
                     </div>
 
                     <div className="info-block">
-                        <h4>Ключевые улучшения</h4>
+                        <h4>Ключевые улучшения после внедрения ИИ</h4>
                         <ul>
                             <li>Сокращение времени обработки заявок на 65%</li>
                             <li>Увеличение точности прогнозирования на 40%</li>
-                            <li>Автоматизация рутинных задач</li>
-                            <li>Улучшение клиентского опыта</li>
+                            <li>Автоматизация рутинных бизнес-задач</li>
+                            <li>Улучшение клиентского опыта и обслуживания</li>
                         </ul>
                     </div>
                 </div>
@@ -100,7 +104,7 @@ const defaultMetrics = [
         title: "Количество продаж клиентов",
         value: "154",
         change: 42,
-        description: "За последний квартал",
+        description: "За последний квартал после внедрения ИИ",
         icon: "📈"
     },
     {
@@ -108,23 +112,23 @@ const defaultMetrics = [
         title: "Скорость отклика",
         value: "2.4ч",
         change: 65,
-        description: "Среднее время ответа",
+        description: "Среднее время ответа на заявки клиентов",
         icon: "⏱️"
     },
     {
         id: 3,
-        title: "Удовлетворенность",
+        title: "Удовлетворенность клиентов",
         value: "94%",
         change: 28,
-        description: "По отзывам клиентов",
+        description: "По отзывам клиентов после автоматизации",
         icon: "⭐"
     },
     {
         id: 4,
-        title: "Новых лидов у наших клиентов",
+        title: "Новых лидов у клиентов",
         value: "87",
         change: 53,
-        description: "За текущий месяц",
+        description: "За текущий месяц после внедрения ИИ решений",
         icon: "👥"
     }
 ];
@@ -140,4 +144,4 @@ const defaultChartData = [
     { month: "Авг", projects: 18, period: "after" }
 ];
 
-export default Dashboard
+export default Dashboard;
